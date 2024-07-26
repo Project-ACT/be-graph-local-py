@@ -18,7 +18,7 @@
       "console": "integratedTerminal",
       "args": [
         "-f",
-        "data/doap.rdf"
+        "tests/data/doap.rdf"
       ]
     },
     {
@@ -29,7 +29,7 @@
       "console": "integratedTerminal",
       "args": [
         "-f",
-        "data/doap.n3"
+        "tests/data/doap.n3"
       ]
     }
   ]
