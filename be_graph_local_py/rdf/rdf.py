@@ -2,7 +2,7 @@ from typing import List
 from rdflib import Graph, Namespace, Literal, XSD
 
 
-def read_rdf(file_path) -> None:
+def read_rdf(file_path) -> Graph:
     """
     Reads an RDF file and returns the parsed RDF graph.
 
