@@ -38,4 +38,4 @@ For more information on how to use Poetry, refer to the [official documentation]
 
 ## Tests
 
-Run `pytest"` to run all the tests in the `tests/` directory.
+Run `pytest` to run all the tests in the `tests/` directory.
