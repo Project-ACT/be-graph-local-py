@@ -4,7 +4,7 @@ Creation and editing of local graph files for publication and automated discover
 
 ## Getting Started
 
-1. Install requied packages with Poetry.
+1. Install required packages with Poetry.
 2. Run `python main.py -f "tests/data/doap.rdf"` to run the program on an example file.
 
 ## Poetry Installation
