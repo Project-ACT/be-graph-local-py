@@ -1,0 +1,100 @@
+# Copyright (C) 2024 Project-ACT
+# 
+# This file is part of be-graph-local-py.
+# 
+# be-graph-local-py is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# be-graph-local-py is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with be-graph-local-py.  If not, see <https://www.gnu.org/licenses/>.
+
+title: "[Design]: Edit title after colon"
+labels:
+  - design
+  - component
+  - be
+  - triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Design Discussion
+
+        Consider the overall Issue Hierarchy for the purposes of a discussion around
+        a particular design choice for this Component Project Implementation.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## My Assertion or Question
+
+        Briefly describe the question, assertion, suggestion, or what have you concerning
+        the design of some aspect of this Component Project Implementation. 
+
+        Add more detail below.
+        
+  - type: textarea
+    id: shortdesc
+    attributes:
+      label: Short Description
+      description: Expound on the Title of this Design Discussion item
+      placeholder: Prose, a list, technical, not-technical, anything about this Component
+
+    validations:
+      required: true
+
+  - type: checkboxes
+    attributes:
+      label: Motivation
+      description: Why I created this discussion.
+      options:
+        - label: I would like to learn!
+        - label: Ideas for a different approach
+        - label: Question(s) about particular design decision(s)
+        - label: Potential problems to ponder sooner than later
+        - label: Compare and contrast a similar project elsewhere
+        - label: Questions or concerns about Privacy, Security
+        - label: Concerns or questions about Accessibility (WAI-ARIA, etc)
+        - label: Internationalization, Localization, etc
+        - label: Something else…
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Detail and References
+
+        This is where you add in a lengthy, more-detailed description of the concerns,
+        suggestions, ideas, whatever you have in mind. Diagrams, illustrations, or any
+        other supporting materials can be attached or linked as appropriate.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Long Description
+      description: Augments the issue title with an extended description
+      placeholder: |
+        Try to be as specific and detailed as possible so that the circumstances of the design
+        issue of interest can be fully considered.
+
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Specific URLS, etc separated here to be more easily found
+      placeholder: |
+        - A list of URLS
+        - Or other references to
+        - Articles, Projects, Websites, etc
+
+    validations:
+      required: false

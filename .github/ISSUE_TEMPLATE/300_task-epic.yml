@@ -1,0 +1,188 @@
+# Copyright (C) 2024 Project-ACT
+# 
+# This file is part of be-graph-local-py.
+# 
+# be-graph-local-py is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# be-graph-local-py is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with be-graph-local-py.  If not, see <https://www.gnu.org/licenses/>.
+
+name: Epic Task
+description: Implementation detail for an Agile Epic
+title: "[Epic Task]: Edit title after colon"
+labels:
+  - task
+  - epic
+  - triage
+projects: 
+  - Project-ACT/2
+assignees:
+  - DanHugoDanHugo
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Back End Epic Implementation
+
+        From time to time, the larger scope of an Initiative Epic may need some focus
+        as an Epic Task for any Component Project. This will usually entail something
+        globally applicable to the Objective or to any or all of the Key Results of the
+        Theme.
+
+        Plan an implementation strategy for a selected Epic Issue linked below,
+        so that an observer might examine plan, effort, and outcome as part of collaboration
+        discovery process.
+
+        An implementation task may be split, merged, or spiked, so that implementation effort
+        and available time can be reasonably planned and apportioned.
+
+  - type: markdown
+    attributes:
+      value: "## Linked Issues"
+
+  - type: markdown
+    attributes:
+      value: |
+        Issues should be linked by url (see info for issue linking bottom of page) to indicate
+        graph relationship between them, with tags in a task list indicating the link relationship.
+        Identifying relationships between issues within the initiative hierarchy should
+        be easier than without this information.
+
+        Tags and Linked Issues
+        - epic: --> Epic Issue located in a initiative overview repository
+        - merge-to: --> a Task that is a merging of this and other Tasks
+        - merge-from: <-- a Task that was merged into this Task
+        - split-to: --> a Task that is one of multiple Tasks derived from this Task
+        - split-from: <-- a Task that was split into this and other Tasks
+        - spike-to: --> a virtual Task for planning and estimation of related Tasks
+        - spike-from: <-- a real Task connected to a virtual spike Task
+
+        Merge-to and Split-to Task issue(s) should be **Closed as Not Planned** in favor of the
+        consolidated or expanded User Story issue(s), as appropriate.
+        
+        Do not delete, mark as merge or split and **Closed as Not Planned**.
+
+  - type: textarea
+    id: linking
+    attributes:
+      label: Linked Issues
+      description: "Tag entries with epic: , merge-to: , split-from: , etc"
+      placeholder: |
+        - epic: issue link within initiative overview
+        - merge-to: this issue merges into a new Story Task issue
+        - split-from: this issue is one refactor from a parent Story Task issue
+
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Issue Graph
+
+        A visualization of Linked Issues as indicated above, updated programmatically, please leave as is.
+
+        As issues are linked or removed, the visualization can be updated via automation.
+
+  - type: textarea
+    id: issuegraph
+    attributes:
+      label: Issue Graph
+      description: Do not edit, will update via automation
+      value: |
+        classDiagram
+          direction TB
+          class Epic Task {
+            Coming : Soon
+          }
+      render: mermaid
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Strategy
+        
+        Brief description of how and where to jump in on Implementation
+
+  - type: textarea
+    id: strategy
+    attributes:
+      label: Strategy
+      description: Leave this as-is after, note pivots and learnings in Wrap-up
+      placeholder: |
+        A brief, very rough summary of ideation before commencing work on an
+        implementation task, should be informative for someone considering
+        joining in.
+
+    validations:
+      required: true
+
+  - type: textarea
+    id: target
+    attributes:
+      label: Target
+      description: Specific information about runtime presumptions
+      placeholder: |
+        - Intended for any or a particular Cloud
+        - Runtime OS, versions, limitations
+        - Specific considerations outside of typical norms…
+
+    validations:
+      required: false
+
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Goals
+        
+        Itemized checklist of items to complete and measure
+
+  - type: textarea
+    id: goals
+    attributes:
+      label: Goals
+      description: At least, Key Result items from associated Epic
+      placeholder: |
+        - [ ] Key Result item 1 from Epic
+        - [ ] Key Result item 2 from Epic
+        - [ ] Etc…
+
+    validations:
+      required: true
+
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Wrap-Up
+
+        Post-Implementation comments, observations, notes
+
+  - type: textarea
+    id: wrapup
+    attributes:
+      label: Wrap-up
+      description: To aid in iterative process improvement and learning
+      placeholder: |
+        Anything that may contribute to other Tasks for Implementation and
+        perhaps on other Initiative effort after this implementation task
+        is considered Completed.
+
+    validations:
+      required: false
+
+  - type: markdown
+    attributes: 
+      value: |
+        ## Helpful Issue-filing Links
+        - [Linking to Issues and PRs across Repositories](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls#issues-and-pull-requests)
+

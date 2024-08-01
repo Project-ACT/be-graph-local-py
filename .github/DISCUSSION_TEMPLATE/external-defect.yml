@@ -1,0 +1,120 @@
+# Copyright (C) 2024 Project-ACT
+# 
+# This file is part of be-graph-local-py.
+# 
+# be-graph-local-py is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# be-graph-local-py is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with be-graph-local-py.  If not, see <https://www.gnu.org/licenses/>.
+
+title: "[External Defect]: Edit title after colon"
+labels:
+  - defect
+  - bug
+  - external
+  - component
+  - be
+  - triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # External Defect
+
+        Please use this Discussion Category to describe an issue, problem, or defect
+        you have encountered developing or interacting with this Component Project.
+
+        We presume here that you are somewhat familiar with the details of this Component
+        Project, its implementation, and the Initiative elements (User Stories, etc) on
+        which it is based so that you can connect what you are seeing with what you
+        should be seeing, and so that you know that this is the correct component project
+        around which to begin this discussion.
+
+        At the same time, a presumption that you are not a part of the team(s) working on
+        the Initiative or its Component parts, thus *External*.
+
+        Please take a moment to fill this in, your GitHub credentials will be used to
+        attribute your contribution to this component project, and to the overall initiative,
+        unless you would rather opt out.
+
+  - type: markdown
+    attributes:
+      value: "## Short Description"
+        
+  - type: textarea
+    id: shortdesc
+    attributes:
+      label: Brief Description
+      description: Augments the issue title with an extended description
+
+    validations:
+      required: true
+
+
+  - type: markdown
+    attributes:
+      value: "## Me as User"
+
+  - type: checkboxes
+    attributes:
+      label: I am a …
+      description: Use context in which this bug was encountered
+      options:
+        - label: "**Unknown** user type, possibly not provided"
+        - label: "**Organization Maintainer** responsible for a cohort of one or more people"
+        - label: "**Organization Member** is anyone considered to be a part of an organization"
+        - label: "**Project Maintainer** responsible for managing project(s)"
+        - label: "**Project Contributor** a person who is part of an organization contributing to project(s)"
+        - label: "**External Contributor** a person discovering projects"
+        - label: "**Casual User** a curious person checking stuff out"
+        - label: "**Automated User** a spider or other bot or similar"
+        - label: "**Catalog Maintainer** oversees the gathered data from remote orgs and projects"
+        - label: "**Spider Maintainer** oversees operation of the automation of gathering data from orgs and projects"
+        - label: "**Visualization Maintainer** integrates graph visualizations into other platform(s)"
+        - label: "**Notification Maintainer** manages integration of notifications with messaging tools and channels"
+        - label: "**Tessellation Contributor** works on Tessellation components in any capacity"
+        - label: "**Any or All** user types listed above"
+
+
+  - type: markdown
+    attributes:
+      value: "## Environment"
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Device, other configuration details
+      placeholder: |
+        - OS, Device(s), Platform(s), versions
+        - Runtime environment
+        - Other useful details to replicate your setup
+
+    validations:
+      required: true
+
+
+  - type: markdown
+    attributes:
+      value: "## Full Description"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Full Description
+      description: Detailed description include reproducibility, specific parameters, and so on
+      placeholder: |
+        Try to be as specific and detailed as possible so that the circumstances of the bug
+        as encountered can be reproduced for debugging and fixing. There will like be continued
+        discussion as examination commences and continues.
+
+    validations:
+      required: true

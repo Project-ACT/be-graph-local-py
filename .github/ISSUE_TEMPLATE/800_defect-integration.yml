@@ -1,0 +1,259 @@
+# Copyright (C) 2024 Project-ACT
+# 
+# This file is part of be-graph-local-py.
+# 
+# be-graph-local-py is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# be-graph-local-py is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with be-graph-local-py.  If not, see <https://www.gnu.org/licenses/>.
+
+name: Integration Implementation Defect
+description: A defect in Component Interactions
+title: "[Integration Defect]: Edit title after colon"
+labels:
+  - defect
+  - bug
+  - component
+  - integration
+  - triage
+projects: 
+  - Project-ACT/2
+assignees:
+  - DanHugoDanHugo
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Back End Implementation Integration Defect
+        
+        You should be somewhat familiar with the Component Project against which this issue is
+        to be filed, as well as related Component Projects where the interactions are problematic.
+
+        Integration defects will have peer defects in other Component Project repositories, probably
+        within this Initiative, which will ideally be resolved in one or more repositories to
+        address the actual defect where it is caused and detected.
+
+  - type: markdown
+    attributes:
+      value: "## User Type"
+
+  - type: checkboxes
+    attributes:
+      label: User Type
+      description: Who is encountering this integration issue.
+      options:
+        - label: "**Unknown** user type, possibly not provided"
+        - label: "**Organization Maintainer** responsible for a cohort of one or more people"
+        - label: "**Organization Member** is anyone considered to be a part of an organization"
+        - label: "**Project Maintainer** responsible for managing project(s)"
+        - label: "**Project Contributor** a person who is part of an organization contributing to project(s)"
+        - label: "**External Contributor** a person discovering projects"
+        - label: "**Casual User** a curious person checking stuff out"
+        - label: "**Automated User** a spider or other bot or similar"
+        - label: "**Catalog Maintainer** oversees the gathered data from remote orgs and projects"
+        - label: "**Spider Maintainer** oversees operation of the automation of gathering data from orgs and projects"
+        - label: "**Visualization Maintainer** integrates graph visualizations into other platform(s)"
+        - label: "**Notification Maintainer** manages integration of notifications with messaging tools and channels"
+        - label: "**Tessellation Contributor** works on Tessellation components in any capacity"
+        - label: "**Any or All** user types listed above"
+  
+  - type: markdown
+    attributes:
+      value: "## Findings"
+
+  - type: textarea
+    id: platform
+    attributes:
+      label: Platform
+      description: Where are we running and how?
+      placeholder: |
+        - Cloud/Local/Desktop/Mobile/etc
+        - OS Version + other device data
+        - Runtime version(s) eg gnucobol 4.0
+        - Anything else
+    validations:
+      required: true
+
+
+  - type: textarea
+    id: target
+    attributes:
+      label: Target
+      description: A file, data source, external service, etc…
+      placeholder: |
+        - Describe the inputs to this Back End
+        - Attach a file as needed
+        - Include URLs for external services, etc
+
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How to make this happen, be precise!
+      placeholder: |
+        1. Any setup
+        2. Execution
+        3. Outcomes
+
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: Given the Steps above, what should have occurred?
+      placeholder: |
+        This may be a guess or presumptive, but there are reasonable expectations
+        one should have, which can be described here.
+
+    validations:
+      required: false
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: Given the Steps above, what actually occurred?
+      placeholder: |
+        Include as much detail as possible, including screen shots, etc.
+
+    validations:
+      required: true
+
+
+  - type: markdown
+    attributes:
+      value: "# Linked Issues"
+
+  - type: markdown
+    attributes:
+      value: |
+        Issues should be linked by url (see info for issue linking bottom of page) to indicate
+        graph relationship between them, with tags in a task list indicating the link relationship.
+        Identifying relationships between issues within the initiative hierarchy should
+        be easier than without this information.
+
+        Tags and Linked Issues
+        - task: --> Potentially-related Story or Feature Task (root cause, etc)
+        - peer: --> Integration Defect in other Component Project
+        - merge-to: --> a Defect that is a merging of this and other Defects
+        - merge-from: <-- a Defect that was merged into this Defect
+        - split-to: --> a Defect that is one of multiple Tasks derived from this Defect
+        - split-from: <-- a Defect that was split into this and other Defects
+        - spike-to: --> a virtual Defect for planning and estimation of related Defects
+        - spike-from: <-- a real Defect connected to a virtual spike Defect
+
+        Merge-to and Split-to Defect issue(s) should be **Closed as Not Planned** in favor of the
+        consolidated or expanded Defect issue(s), as appropriate.
+        
+        Do not delete, mark as merge or split and **Closed as Not Planned**.
+
+  - type: textarea
+    id: linking
+    attributes:
+      label: Linked Issues
+      description: "Tag entries with task: , merge-to: , split-from: , etc"
+      placeholder: |
+        - task: issue link within component project repo
+        - merge-to: this issue merges into a new Defect issue
+        - split-from: this issue is one refactor from a parent Defect issue
+
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Issue Graph
+
+        A visualization of Linked Issues as indicated above, updated programmatically, please leave as is.
+
+        As issues are linked or removed, the visualization can be updated via automation.
+
+  - type: textarea
+    id: issuegraph
+    attributes:
+      label: Issue Graph
+      description: Do not edit, will update via automation
+      value: |
+        classDiagram
+          direction TB
+          class Int Defect {
+            Coming : Soon
+          }
+      render: mermaid
+
+  - type: markdown
+    attributes:
+      value: |
+        ## References
+
+        Links to external specs, documents, RFCs, accepted standards, examples, etc
+        
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Place useful information close for implementors to find…
+      placeholder: |
+        - Links to resources to aid in implementation of this User Story
+        - to External API Specifications, Accessibility Standards
+        - to Verification/Certification tools
+        - to Similar features in other projects/platforms
+
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Notes
+
+        Non-defect/implementation knowledge and insight
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Optional meta detail
+      placeholder: Useful information for planning and implementation, etc.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Wrap-Up
+
+        This is a postmortem summary to capture considerations and learnings for
+        review in the future or to add to discussion of future implementation tasks
+        in this and other Component Projects and Initiatives.
+
+  - type: textarea
+    id: wrapup
+    attributes:
+      label: Wrap-up
+      description: To aid in iterative process improvement and learning
+      placeholder: |
+        Anything that may contribute to other User Stories and other project effort.
+
+    validations:
+      required: false
+
+  - type: markdown
+    attributes: 
+      value: |
+        ## Helpful Issue-filing Links
+        - [Linking to Issues and PRs across Repositories](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls#issues-and-pull-requests)
