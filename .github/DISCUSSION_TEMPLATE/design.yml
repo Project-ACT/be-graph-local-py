@@ -18,8 +18,6 @@
 title: "[Design]: Edit title after colon"
 labels:
   - design
-  - component
-  - be
   - triage
 body:
   - type: markdown

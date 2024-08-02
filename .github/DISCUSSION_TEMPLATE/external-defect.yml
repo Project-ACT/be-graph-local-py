@@ -20,8 +20,6 @@ labels:
   - defect
   - bug
   - external
-  - component
-  - be
   - triage
 body:
   - type: markdown

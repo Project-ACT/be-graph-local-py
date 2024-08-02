@@ -21,7 +21,6 @@ title: "[Integration Defect]: Edit title after colon"
 labels:
   - defect
   - bug
-  - component
   - integration
   - triage
 projects: 

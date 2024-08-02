@@ -18,8 +18,6 @@
 title: "[Repository]: Edit title after colon"
 labels:
   - repo
-  - component
-  - be
   - triage
 body:
   - type: markdown

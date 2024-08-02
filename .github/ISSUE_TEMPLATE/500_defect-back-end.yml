@@ -21,7 +21,6 @@ title: "[Back End Defect]: Edit title after colon"
 labels:
   - defect
   - bug
-  - component
   - triage
 projects: 
   - Project-ACT/2
