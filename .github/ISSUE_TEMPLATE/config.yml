@@ -1,0 +1,28 @@
+# Copyright (C) 2024 Project-ACT
+# 
+# This file is part of be-graph-local-py.
+# 
+# be-graph-local-py is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# be-graph-local-py is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with be-graph-local-py.  If not, see <https://www.gnu.org/licenses/>.
+
+blank_issues_enabled: false
+contact_links:
+  - name: "Discussion: Tessellation Feature Request"
+    url: https://github.com/Project-ACT/ov-tessellation/discussions/categories/feature-request
+    about: GitHub Discussion for pondering new Tessellation Features
+  - name: "Discussion: Tessellation Theme Request"
+    url: https://github.com/Project-ACT/ov-tessellation/discussions/categories/theme-request
+    about: GitHub Discussion for pondering broad Tessellation Themes
+  - name: EXTERNAL Project-ACT Discord
+    url: https://discord.gg/kVmqJpS55W
+    about: Visit here for general discussion, future notions, etc
