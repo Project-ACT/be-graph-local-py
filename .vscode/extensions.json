@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "kevinrose.vsc-python-indent",
+    "ms-python.python",
+    "njpwerner.autodocstring",
+    "donjayamanne.python-environment-manager"
+  ]
+}

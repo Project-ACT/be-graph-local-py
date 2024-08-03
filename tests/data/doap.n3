@@ -1,0 +1,47 @@
+# Description of a Project in machine-readable form
+#
+# This is a DOAP file - see https://github.com/ewilderj/doap/wiki
+# This is RDF data - see https://www.w3.org/RDF/
+# This is written in Notation3 - see https://notation3.org/
+# This is serialized to RDF/XML format for publication, with an .rdf extension
+
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<https://project-act.info/projects/ov-tessellation>
+  a doap:Project ;
+  doap:name "Tessellation Project Overview" ;
+  doap:shortdesc  "The goal of the Tessellation Project is to establish an opt-in, decentralized means of project discovery to capture, communicate, and collaborate." ;
+  doap:description 
+    """ 
+       The Tessellation Overview is a starting point for specification, documentation, and ideation toward development of essential and useful components
+       which will make up a functional system of opt-in advertisement of organization and project participatns in one or more development communities to
+       fascilitate collaboration without a top down management infrastructure.
+    """ ;
+  doap:homepage <https://github.com/Project-ACT/ov-tessellation> ;
+  doap:bug-database <https://github.com/Project-ACT/ov-tessellation/issues> ;
+  doap:Specification <https://github.com/Project-ACT/ov-tessellation/tree/main/doc> ;
+  doap:license <http://spdx.org/licenses/GPL-3.0-only> ;
+  doap:maintainer <https://project-act.info/people/DevOps> ;
+  doap:documenter <https://project-act.info/people/DanHugo> ;
+  doap:repository <https://project-act.info/projects/ov-tessellation/repo> ;
+  
+  # Author of this DOAP document
+  foaf:maker <https://project-act.info/people/DanHugo> .
+
+<https://project-act.info/projects/ov-tessellation/repo>
+  a doap:GitRepository ;
+    doap:location <https://github.com/Project-ACT/ov-tessellation.git> ;
+    doap:browse <https://github.com/Project-ACT/ov-tessellation> .
+
+<https://project-act.info/people/DevOps>
+  a foaf:Person ;
+    foaf:name "DevOps - Project-ACT" ;
+    foaf:homepage <https://github.com/DevOps-Project-ACT> ;
+    foaf:mbox <mailto:devops@project-act.info> .
+
+<https://project-act.info/people/DanHugo>
+  a foaf:person ;
+    foaf:name "Dan Hugo" ;
+    foaf:homepage <https://github.com/DanHugoDanHugo> ;
+    foaf:mbox <mailto:dhugo@reallycool.com> .
