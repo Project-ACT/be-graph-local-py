@@ -14,19 +14,23 @@
 # 
 # You should have received a copy of the GNU General Public License
 # along with be-graph-local-py.  If not, see <https://www.gnu.org/licenses/>.
-
+---
 title: "[External Defect]: Edit title after colon"
 labels:
+  - extern
   - defect
-  - bug
-  - external
+  - cp-be
   - triage
 body:
   - type: markdown
+    id: discussion_head_title
+    attributes:
+      value: "# External Defect"
+
+  - type: markdown
+    id: discussion_head_description
     attributes:
       value: |
-        # External Defect
-
         Please use this Discussion Category to describe an issue, problem, or defect
         you have encountered developing or interacting with this Component Project.
 
@@ -44,8 +48,18 @@ body:
         unless you would rather opt out.
 
   - type: markdown
+    id: discussion_shortdesc_title
     attributes:
       value: "## Short Description"
+
+  - type: markdown
+    id: discussion_shortdesc_description
+    attributes:
+      value: |
+        The text entered here will be visible via mouse over in GitHub issue summary views
+        and may be extracted with automated tools for other uses.
+
+        Please be succinct, one paragraph.
         
   - type: textarea
     id: shortdesc
@@ -56,33 +70,71 @@ body:
     validations:
       required: true
 
+  - type: markdown
+    id: discussion_characterization_title
+    attributes:
+      value: "## Characterization" 
 
   - type: markdown
+    id: discussion_characterization_description
+    attributes:
+      value: |
+
+        So that we can assess severity and priority scores, select at least one
+        of each item in the checkbox blocks below, for Observations and for
+        Frequency.
+
+        If you have more detail for these, please include it down below.
+
+  - type: markdown
+    id: observations
+    attributes:
+      label: Observations
+      description: Types of problems or failures observed
+      options:
+        - label: "Data Loss or Destructive Failure"
+        - label: "Crash or other self-contained Failure"
+        - label: "Unexpected behavior"
+        - label: "Explicitly incorrect behavior"
+        - label: "Does not meet expectations"
+        - label: "Untestable"
+        - label: "Cosmetic failure"
+        - label: "Security failure"
+        - label: "Privacy failure"
+
+
+  - type: markdown
+    id: frequency
+    attributes:
+      label: Frequency
+      description: Reproducing the observations
+      options:
+        - label: "Observed nearly 100% of the time"
+        - label: "Frequently but not consistently"
+        - label: "Infrequently but observable"
+        - label: "Difficult to observe, for unknown reasons"
+        - label: "Seems to depend on external factors"
+
+  - type: markdown
+    id: discussion_usertype_title
     attributes:
       value: "## Me as User"
 
   - type: checkboxes
+    id: usertype
     attributes:
-      label: I am a …
+      label: User Type (I am a …)
       description: Use context in which this bug was encountered
       options:
         - label: "**Unknown** user type, possibly not provided"
-        - label: "**Organization Maintainer** responsible for a cohort of one or more people"
-        - label: "**Organization Member** is anyone considered to be a part of an organization"
-        - label: "**Project Maintainer** responsible for managing project(s)"
-        - label: "**Project Contributor** a person who is part of an organization contributing to project(s)"
-        - label: "**External Contributor** a person discovering projects"
-        - label: "**Casual User** a curious person checking stuff out"
-        - label: "**Automated User** a spider or other bot or similar"
-        - label: "**Catalog Maintainer** oversees the gathered data from remote orgs and projects"
-        - label: "**Spider Maintainer** oversees operation of the automation of gathering data from orgs and projects"
-        - label: "**Visualization Maintainer** integrates graph visualizations into other platform(s)"
-        - label: "**Notification Maintainer** manages integration of notifications with messaging tools and channels"
-        - label: "**Tessellation Contributor** works on Tessellation components in any capacity"
+        - label: "**User Type A** description"
+        - label: "**User Type B** description"
+        - label: "**User Type C** description"
         - label: "**Any or All** user types listed above"
 
 
   - type: markdown
+    id: discussion_environment_title
     attributes:
       value: "## Environment"
 
@@ -101,6 +153,7 @@ body:
 
 
   - type: markdown
+    id: discussion_description_title
     attributes:
       value: "## Full Description"
 

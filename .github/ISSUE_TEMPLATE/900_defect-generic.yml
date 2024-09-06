@@ -14,13 +14,13 @@
 # 
 # You should have received a copy of the GNU General Public License
 # along with be-graph-local-py.  If not, see <https://www.gnu.org/licenses/>.
-
-name: Generic Implementation Defect
-description: A catch-all for any other defects
-title: "[Generic Defect]: Edit title after colon"
-labels:
+---
+name: General Defect
+description: Investigated Flaw report
+title: "[General Defect]: Edit title after colon"
+labels: 
   - defect
-  - bug
+  - cp-be
   - triage
 projects: 
   - Project-ACT/2
@@ -28,10 +28,14 @@ assignees:
   - DanHugoDanHugo
 body:
   - type: markdown
+    id: defect_head_title
+    attributes:
+      value: "# General Implementation Defect"
+
+  - type: markdown
+    id: defect_head_description
     attributes:
       value: |
-        # General Implementation Defect
-        
         You should be somewhat familiar with the Component Project against which this issue is
         to be filed.
 
@@ -39,12 +43,83 @@ body:
         appropriate or relevant. 
 
   - type: markdown
+    id: defect_shortdesc_title
+    attributes:
+      value: "## Short Description"
+  
+  - type: markdown
+    id: defect_shortdesc_description
+    attributes:
+      value: |
+        The text entered here will be visible via mouse over in GitHub issue summary views
+        and may be extracted with automated tools for other uses.
+
+        Please be succinct, one paragraph.
+
+  - type: textarea
+    id: shortdesc
+    attributes:
+      label: Short Description
+      description: Expound on the Title of this Defect item
+      placeholder: Useful information visible in summary views
+
+    validations:
+      required: true
+
+  - type: markdown
+    id: defect_characterization_title
+    attributes:
+      value: "## Characterization" 
+
+  - type: markdown
+    id: defect_characterization_description
+    attributes:
+      value: |
+
+        So that we can assess severity and priority scores, select at least one
+        of each item in the checkbox blocks below, for Observations and for
+        Frequency.
+
+        If you have more detail for these, please include it down below.
+
+  - type: checkboxes
+    id: observations
+    attributes:
+      label: Observations
+      description: Types of problems or failures observed
+      options:
+        - label: "Data Loss or Destructive Failure"
+        - label: "Crash or other self-contained Failure"
+        - label: "Unexpected behavior"
+        - label: "Explicitly incorrect behavior"
+        - label: "Does not meet expectations"
+        - label: "Untestable"
+        - label: "Cosmetic failure"
+        - label: "Security failure"
+        - label: "Privacy failure"
+
+
+  - type: checkboxes
+    id: frequency
+    attributes:
+      label: Frequency
+      description: Reproducing the observations
+      options:
+        - label: "Observed nearly 100% of the time"
+        - label: "Frequently but not consistently"
+        - label: "Infrequently but observable"
+        - label: "Difficult to observe, for unknown reasons"
+        - label: "Seems to depend on external factors"
+
+  - type: markdown
+    id: defect_usertype_title
     attributes:
       value: "## User Type"
 
   - type: checkboxes
+    id: defect_usertype_description
     attributes:
-      label: As a…
+      label: User Type (As a …)
       description: For whom are we making, be deliberate when choosing more than one.
       options:
         - label: "**Unknown** user type, possibly not provided"
@@ -63,6 +138,7 @@ body:
         - label: "**Any or All** user types listed above"
   
   - type: markdown
+    id: defect_findings_title
     attributes:
       value: "## Findings"
 
@@ -131,25 +207,25 @@ body:
 
 
   - type: markdown
+    id: defect_linking_title
     attributes:
       value: "## Linked Issues"
 
   - type: markdown
+    id: defect_linking_description
     attributes:
       value: |
-        Issues should be linked by url (see info for issue linking bottom of page) to indicate
-        graph relationship between them, with tags in a task list indicating the link relationship.
-        Identifying relationships between issues within the initiative hierarchy should
-        be easier than without this information.
+        Link issues by url (see info for issue linking bottom of page) to indicate
+        graph relationship between them, with tags in a list indicating the link relationship.
 
         Tags and Linked Issues
-        - task: --> Potentially-related Story Task (root cause, etc)
-        - merge-to: --> a Defect that is a merging of this and other Defects
-        - merge-from: <-- a Defect that was merged into this Defect
-        - split-to: --> a Defect that is one of multiple Tasks derived from this Defect
-        - split-from: <-- a Defect that was split into this and other Defects
-        - spike-to: --> a virtual Defect for planning and estimation of related Defects
-        - spike-from: <-- a real Defect connected to a virtual spike Defect
+        - :task --> Potentially-related Story Task (root cause, etc)
+        - :merge-to --> a Defect that is a merging of this and other Defects
+        - :merge-from <-- a Defect that was merged into this Defect
+        - :split-to --> a Defect that is one of multiple Tasks derived from this Defect
+        - :split-from <-- a Defect that was split into this and other Defects
+        - :spike-to --> a virtual Defect for planning and estimation of related Defects
+        - :spike-from <-- a real Defect connected to a virtual spike Defect
 
         Merge-to and Split-to Defect issue(s) should be **Closed as Not Planned** in favor of the
         consolidated or expanded Defect issue(s), as appropriate.
@@ -160,20 +236,24 @@ body:
     id: linking
     attributes:
       label: Linked Issues
-      description: "Tag entries with task: , merge-to: , split-from: , etc"
+      description: "Tag issue URLs with :task , :merge-to , :split-from , etc"
       placeholder: |
-        - task: issue link within component project repo
-        - merge-to: this issue merges into a new Defect issue
-        - split-from: this issue is one refactor from a parent Defect issue
+        - :task issue link within component project repo
+        - :merge-to this issue merges into a new Defect issue
+        - :split-from this issue is one refactor from a parent Defect issue
 
     validations:
       required: false
 
   - type: markdown
+    id: defect_issuegraph_title
+    attributes:
+      value: "## Issue Graph"
+
+  - type: markdown
+    id: defect_issuegraph_description
     attributes:
       value: |
-        ## Issue Graph
-
         A visualization of Linked Issues as indicated above, updated programmatically, please leave as is.
 
         As issues are linked or removed, the visualization can be updated via automation.
@@ -192,10 +272,14 @@ body:
       render: mermaid
 
   - type: markdown
+    id: defect_references_title
+    attributes:
+      value: "## References"
+
+  - type: markdown
+    id: defect_references_description
     attributes:
       value: |
-        ## References
-
         Links to external specs, documents, RFCs, accepted standards, examples, etc
         
   - type: textarea
@@ -213,10 +297,14 @@ body:
       required: false
 
   - type: markdown
+    id: defect_notes_title
+    attributes:
+      value: "## Notes"
+
+  - type: markdown
+    id: defect_notes_description
     attributes:
       value: |
-        ## Notes
-
         Non-defect/implementation knowledge and insight
 
   - type: textarea
@@ -229,18 +317,22 @@ body:
       required: false
 
   - type: markdown
+    id: defect_retro_title
+    attributes:
+      value: "## Retrospective"
+
+  - type: markdown
+    id: defect_retro_description
     attributes:
       value: |
-        ## Wrap-Up
-
         This is a postmortem summary to capture considerations and learnings for
         review in the future or to add to discussion of future implementation tasks
         in this and other Component Projects and Initiatives.
 
   - type: textarea
-    id: wrapup
+    id: retro
     attributes:
-      label: Wrap-up
+      label: Retrospective
       description: To aid in iterative process improvement and learning
       placeholder: |
         Anything that may contribute to other User Stories and other project effort.
@@ -249,7 +341,12 @@ body:
       required: false
 
   - type: markdown
+    id: defect_helpful_title
+    attributes: 
+      value: "## Helpful Issue-filing Links"
+
+  - type: markdown
+    id: defect_helpful_description
     attributes: 
       value: |
-        ## Helpful Issue-filing Links
         - [Linking to Issues and PRs across Repositories](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls#issues-and-pull-requests)

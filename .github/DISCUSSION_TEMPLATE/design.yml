@@ -14,41 +14,50 @@
 # 
 # You should have received a copy of the GNU General Public License
 # along with be-graph-local-py.  If not, see <https://www.gnu.org/licenses/>.
-
+---
 title: "[Design]: Edit title after colon"
 labels:
   - design
+  - cp-be
   - triage
 body:
   - type: markdown
+    id: discussion_head_title
+    attributes:
+      value: "# Design Discussion"
+
+  - type: markdown
+    id: discussion_head_description
     attributes:
       value: |
-        # Design Discussion
-
         Consider the overall Issue Hierarchy for the purposes of a discussion around
         a particular design choice for this Component Project Implementation.
 
   - type: markdown
+    id: discussion_shortdesc_title
+    attributes:
+      value: "## Short Description"
+
+  - type: markdown
+    id: discussion_shortdesc_description
     attributes:
       value: |
-        ## My Assertion or Question
+        The text entered here will be visible via mouse over in GitHub issue summary views
+        and may be extracted with automated tools for other uses.
 
-        Briefly describe the question, assertion, suggestion, or what have you concerning
-        the design of some aspect of this Component Project Implementation. 
-
-        Add more detail below.
+        Please be succinct, one paragraph.
         
   - type: textarea
     id: shortdesc
     attributes:
-      label: Short Description
-      description: Expound on the Title of this Design Discussion item
-      placeholder: Prose, a list, technical, not-technical, anything about this Component
+      label: Brief Description
+      description: Augments the issue title with an extended description
 
     validations:
       required: true
 
   - type: checkboxes
+    id: motivation
     attributes:
       label: Motivation
       description: Why I created this discussion.
@@ -64,10 +73,14 @@ body:
         - label: Something else…
 
   - type: markdown
+    id: discussion_description_title
+    attributes:
+      value: "## Detail and References"
+
+  - type: markdown
+    id: discussion_description_description
     attributes:
       value: |
-        ## Detail and References
-
         This is where you add in a lengthy, more-detailed description of the concerns,
         suggestions, ideas, whatever you have in mind. Diagrams, illustrations, or any
         other supporting materials can be attached or linked as appropriate.
@@ -75,7 +88,7 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: Long Description
+      label: Detailed Description
       description: Augments the issue title with an extended description
       placeholder: |
         Try to be as specific and detailed as possible so that the circumstances of the design

@@ -14,13 +14,14 @@
 # 
 # You should have received a copy of the GNU General Public License
 # along with be-graph-local-py.  If not, see <https://www.gnu.org/licenses/>.
-
+---
 name: Story Task
 description: Implementation detail for an Agile User Story
 title: "[Story Task]: Edit title after colon"
-labels:
+labels: 
   - task
   - story
+  - cp-be
   - triage
 projects: 
   - Project-ACT/2
@@ -28,10 +29,14 @@ assignees:
   - DanHugoDanHugo
 body:
   - type: markdown
+    id: task_head_title
+    attributes:
+      value: "# Back End User Story Implementation"
+
+  - type: markdown
+    id: task_head_description
     attributes:
       value: |
-        # Back End User Story Implementation
-
         Plan an implementation strategy for a selected User Story Issue linked below,
         so that an observer might examine plan, effort, and outcome as part of collaboration
         discovery process.
@@ -40,25 +45,50 @@ body:
         and available time can be reasonably planned and apportioned.
 
   - type: markdown
+    id: task_shortdesc_title
+    attributes:
+      value: "## Short Description"
+  
+  - type: markdown
+    id: task_shortdesc_description
+    attributes:
+      value: |
+        The text entered here will be visible via mouse over in GitHub issue summary views
+        and may be extracted with automated tools for other uses.
+
+        Please be succinct, one paragraph.
+
+  - type: textarea
+    id: shortdesc
+    attributes:
+      label: Short Description
+      description: Expound on the Title of this Story Task item
+      placeholder: Useful information visible in summary views
+
+    validations:
+      required: true
+
+
+  - type: markdown
+    id: task_linking_title
     attributes:
       value: "## Linked Issues"
 
   - type: markdown
+    id: task_linking_description
     attributes:
       value: |
-        Issues should be linked by url (see info for issue linking bottom of page) to indicate
-        graph relationship between them, with tags in a task list indicating the link relationship.
-        Identifying relationships between issues within the initiative hierarchy should
-        be easier than without this information.
+        Link issues by url (see info for issue linking bottom of page) to indicate
+        graph relationship between them, with tags in a list indicating the link relationship.
 
         Tags and Linked Issues
-        - story: --> User Story Issue located in a initiative overview repository
-        - merge-to: --> a Task that is a merging of this and other Tasks
-        - merge-from: <-- a Task that was merged into this Task
-        - split-to: --> a Task that is one of multiple Tasks derived from this Task
-        - split-from: <-- a Task that was split into this and other Tasks
-        - spike-to: --> a virtual Task for planning and estimation of related Tasks
-        - spike-from: <-- a real Task connected to a virtual spike Task
+        - :story --> User Story Issue located in a initiative overview repository
+        - :merge-to --> a Task that is a merging of this and other Tasks
+        - :merge-from <-- a Task that was merged into this Task
+        - :split-to --> a Task that is one of multiple Tasks derived from this Task
+        - :split-from <-- a Task that was split into this and other Tasks
+        - :spike-to --> a virtual Task for planning and estimation of related Tasks
+        - :spike-from <-- a real Task connected to a virtual spike Task
 
         Merge-to and Split-to Task issue(s) should be **Closed as Not Planned** in favor of the
         consolidated or expanded User Story issue(s), as appropriate.
@@ -69,20 +99,24 @@ body:
     id: linking
     attributes:
       label: Linked Issues
-      description: "Tag entries with story: , merge-to: , split-from: , etc"
+      description: "Tag issue URLs with :story , :merge-to , :split-from , etc"
       placeholder: |
-        - story: issue link within initiative overview
-        - merge-to: this issue merges into a new Story Task issue
-        - split-from: this issue is one refactor from a parent Story Task issue
+        - :story issue link within initiative overview
+        - :merge-to this issue merges into a new Story Task issue
+        - :split-from this issue is one refactor from a parent Story Task issue
 
     validations:
       required: false
 
   - type: markdown
+    id: task_issuegraph_title
+    attributes:
+      value: "## Issue Graph"
+
+  - type: markdown
+    id: task_issuegraph_description
     attributes:
       value: |
-        ## Issue Graph
-
         A visualization of Linked Issues as indicated above, updated programmatically, please leave as is.
 
         As issues are linked or removed, the visualization can be updated via automation.
@@ -101,17 +135,21 @@ body:
       render: mermaid
 
   - type: markdown
+    id: task_strategy_title
+    attributes:
+      value: "## Strategy"
+
+  - type: markdown
+    id: task_strategy_description
     attributes:
       value: |
-        ## Strategy
-        
         Brief description of how and where to jump in on Implementation
 
   - type: textarea
     id: strategy
     attributes:
       label: Strategy
-      description: Leave this as-is after, note pivots and learnings in Wrap-up
+      description: Leave this as-is after, note pivots and learnings in Retrospective
       placeholder: |
         A brief, very rough summary of ideation before commencing work on an
         implementation task, should be informative for someone considering
@@ -133,12 +171,15 @@ body:
     validations:
       required: false
 
+  - type: markdown
+    id: task_goals_title
+    attributes:
+      value: "## Goals"
 
   - type: markdown
+    id: task_goals_description
     attributes:
       value: |
-        ## Goals
-        
         Itemized checklist of items to complete and measure
 
   - type: textarea
@@ -154,18 +195,21 @@ body:
     validations:
       required: true
 
+  - type: markdown
+    id: task_retro_title
+    attributes:
+      value: "## Retrospective"
 
   - type: markdown
+    id: task_retro_description
     attributes:
       value: |
-        ## Wrap-Up
-
         Post-Implementation comments, observations, notes
 
   - type: textarea
-    id: wrapup
+    id: retro
     attributes:
-      label: Wrap-up
+      label: Retrospective
       description: To aid in iterative process improvement and learning
       placeholder: |
         Anything that may contribute to other Tasks for Implementation and
@@ -177,7 +221,12 @@ body:
 
 
   - type: markdown
+    id: task_helpful_title
+    attributes: 
+      value: "## Helpful Issue-filing Links"
+
+  - type: markdown
+    id: task_helpful_description
     attributes: 
       value: |
-        ## Helpful Issue-filing Links
         - [Linking to Issues and PRs across Repositories](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls#issues-and-pull-requests)

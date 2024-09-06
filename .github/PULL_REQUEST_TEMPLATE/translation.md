@@ -4,7 +4,9 @@ Check all that apply (X or x between square brackets)
 
 - [ ] I am a native or fluent speaker of the language translated *to*
 - [ ] I have performed this translation myself
-- [ ] This translation was performed using automated tools (please indicate method)
+- [ ] This translation was performed using automated tools (please indicate method below)
+- [ ] This submission complies with the statements found at <https://developercertificate.org/>
+- [ ] I have signed off on my commit(s)
 - [x] Example Checked item
 
 ## Translation Method
@@ -51,3 +53,10 @@ method for including references to co-contributors, though note that according t
 standard, there is a still a primary author.
 
 Please review [GitHub Co-Author Attribution](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors)
+
+### Git Signoff
+
+Please visit the Git documentation for Git Commit regarding the --signoff option
+[Git-Scm: Commit signoff option](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---signoff)
+
+If you are using an editor such as VS Code, use a *Commit (Signed Off)* option, for example, to accomplish this using your tools.
