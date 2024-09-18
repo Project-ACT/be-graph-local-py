@@ -18,12 +18,12 @@
 blank_issues_enabled: false
 contact_links:
   - name: "Discussion: Agile for Volunteers Iteration"
-    url: https://github.com/Project-ACT/ov-tessellation/discussions/categories/iteration
+    url: https://github.com/Project-ACT/be-graph-local-py/discussions/categories/iteration
     about: GitHub Discussion about a current Initiative Iteration
-  - name: "Discussion: Tessellation Feature Request"
+  - name: "Discussion: Tessellation Initiative Feature Request"
     url: https://github.com/Project-ACT/ov-tessellation/discussions/categories/feature-request
     about: GitHub Discussion for pondering new Tessellation Features
-  - name: "Discussion: Tessellation Theme Request"
+  - name: "Discussion: Tessellation Initiative Theme Request"
     url: https://github.com/Project-ACT/ov-tessellation/discussions/categories/theme-request
     about: GitHub Discussion for pondering broad Tessellation Themes
   - name: "Discussion: Design"
