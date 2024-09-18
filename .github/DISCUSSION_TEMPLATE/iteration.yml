@@ -1,0 +1,102 @@
+# Copyright (C) 2024 Innovate for Vegas Foundation
+# 
+# This file is part of doc-agile-for-volunteers.
+# 
+# doc-agile-for-volunteers is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# doc-agile-for-volunteers is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with doc-agile-for-volunteers.  If not, see <https://www.gnu.org/licenses/>.
+---
+title: "[Iteration]: Edit title after colon"
+labels:
+  - task
+  - cp-be
+body:
+  - type: markdown
+    id: discussion_head_title
+    attributes:
+      value: "# Agile Iteration Discussion"
+
+  - type: markdown
+    id: discussion_head_description
+    attributes:
+      value: |
+        A new Iteration Discussion item will be added for this Component Project.
+
+  - type: markdown
+    id: discussion_daterange_title
+    attributes:
+      value: "## Date Range"
+
+  - type: markdown
+    id: discussion_daterange_description
+    attributes:
+      value: |
+        The Start and End Dates of this Iteration, will be visible in summary views in the GitHub
+        Interface and possibly elsewhere.
+
+  - type: input
+    id: start
+    attributes:
+      label: Start
+      description: Start Date
+      placeholder: YYYY-Mon-DD
+    validations:
+      required: true
+
+  - type: input
+    id: end
+    attributes:
+      label: End
+      description: End Date
+      placeholder: YYYY-Mon-DD
+    validations:
+      required: true
+
+  - type: markdown
+    id: discussion_notes_title
+    attributes:
+      value: "## Notes"
+
+  - type: markdown
+    id: discussion_notes_description
+    attributes:
+      value: |
+        Anything to state up front as the Iteration begins
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: "Any last words before Iteration begins"
+    validations:
+      required: true
+
+  - type: markdown
+    id: discussion_retro_title
+    attributes:
+      value: "## Retrospective"
+
+  - type: markdown
+    id: discussion_retro_description
+    attributes:
+      value: |
+        Postmortem comments, observations, considerations for next time.
+
+  - type: textarea
+    id: retro
+    attributes:
+      label: Retrospective
+      description: "Any last words after the Iteration ends"
+    validations:
+      required: false
+
+
