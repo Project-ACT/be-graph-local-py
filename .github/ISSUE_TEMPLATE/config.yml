@@ -29,7 +29,7 @@ contact_links:
   - name: "Discussion: Design"
     url: https://github.com/Project-ACT/be-graph-local-py/discussions/categories/design
     about: GitHub Discussion about design considerations of this component project repository 
-  - name: "Discussion: Repo"
+  - name: "Discussion: This Repository"
     url: https://github.com/Project-ACT/be-graph-local-py/discussions/categories/repo
     about: GitHub Discussion about this component project repository 
   - name: "Discussion: External Bug"
